@@ -3,7 +3,7 @@ import alphasign
 
 
 def main():
-  sign = alphasign.Serial("/dev/ttyUSB1")
+  sign = alphasign.Serial("/dev/ttyUSB0")
   sign.connect()
   sign.clear_memory()
 
