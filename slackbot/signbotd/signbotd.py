@@ -1,8 +1,10 @@
 #!/usr/bin/env python
-
+# -*- coding: utf-8 -*-
 import time
 from slackclient import SlackClient
 from subprocess import call
+import fileinput
+
 
 token = "xoxb-16569788000-v0QkD3YyVNA1NoLql6M4Phsu"
 sc = SlackClient(token)
@@ -11,7 +13,8 @@ if sc.rtm_connect():
         msg = sc.rtm_read()
         for x in msg:
            if "text" in x:
-               args = "\"-t " + x["text"] + "\""
+               atext = x["text"].encode('ascii', 'replace')
+               args = "\"-t " + atext + "\""
                print args
                call("/home/pi/led_sign/sign.py " + args, shell=True)
         time.sleep(1)

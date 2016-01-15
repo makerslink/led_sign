@@ -1,4 +1,7 @@
 #!/usr/bin/python
+#-*- coding: UTF-8 -*-
+# -*- coding: iso-8859-1 -*-
+# -*- coding: latin-1 -*-
 
 import sys, getopt
 import time
@@ -43,6 +46,8 @@ def main(argv):
 
     # add color tag to text
     text = '%s' + text
+    
+    # replace special characters that sign can't handle
 
     # connect to sign
     sign = alphasign.Serial(port)
