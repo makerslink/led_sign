@@ -13,7 +13,7 @@ if sc.rtm_connect():
         msg = sc.rtm_read()
         for x in msg:
            if "text" in x:
-               atext = x["text"].encode('latin-1', 'replace')
+               atext = x["text"].encode('utf-8')
                args = "\"-t " + atext + "\""
                print args
                call("/home/pi/led_sign/sign.py " + args, shell=True)
