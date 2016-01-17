@@ -48,12 +48,12 @@ def main(argv):
     text = '%s' + text
     
     # replace special characters that sign can't handle
-    text = text.replace(chr(229), chr(134))    #å
-    text = text.replace(chr(228), chr(132))    #ä
-    text = text.replace(chr(246), chr(148))    #ö
-    text = text.replace(chr(197), chr(143))    #Å
-    text = text.replace(chr(196), chr(142))    #Ä
-    text = text.replace(chr(214), chr(153))    #Ö
+    text = text.replace(chr(195)+chr(165), chr(134))    #å
+    text = text.replace(chr(195)+chr(164), chr(132))    #ä
+    text = text.replace(chr(195)+chr(182), chr(148))    #ö
+    text = text.replace(chr(195)+chr(133), chr(143))    #Å
+    text = text.replace(chr(195)+chr(132), chr(142))    #Ä
+    text = text.replace(chr(195)+chr(150), chr(153))    #Ö
 
     # connect to sign
     sign = alphasign.Serial(port)
