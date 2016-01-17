@@ -49,12 +49,12 @@ def main(argv):
     
     # replace special characters that sign can't handle
     # Finds åäöÅÄÖ and replaces it with the special character the sign wants and the 08 control code.
-    text = text.replace(chr(195)+chr(165), chr(8)+chr(134))    #å
-    text = text.replace(chr(195)+chr(164), chr(8)+chr(132))    #ä
-    text = text.replace(chr(195)+chr(182), chr(8)+chr(148))    #ö
-    text = text.replace(chr(195)+chr(133), chr(8)+chr(143))    #Å
-    text = text.replace(chr(195)+chr(132), chr(8)+chr(142))    #Ä
-    text = text.replace(chr(195)+chr(150), chr(8)+chr(153))    #Ö
+    text = text.replace(chr(195)+chr(165), chr(8)+chr(38))    #å
+    text = text.replace(chr(195)+chr(164), chr(8)+chr(36))    #ä
+    text = text.replace(chr(195)+chr(182), chr(8)+chr(52))    #ö
+    text = text.replace(chr(195)+chr(133), chr(8)+chr(47))    #Å
+    text = text.replace(chr(195)+chr(132), chr(8)+chr(46))    #Ä
+    text = text.replace(chr(195)+chr(150), chr(8)+chr(57))    #Ö
 
     # connect to sign
     sign = alphasign.Serial(port)
