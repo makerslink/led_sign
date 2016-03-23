@@ -6,7 +6,8 @@ from subprocess import call
 import fileinput
 
 
-token = "xoxb-16569788000-v0QkD3YyVNA1NoLql6M4Phsu"
+#token = "xoxb-16569788000-v0QkD3YyVNA1NoLql6M4Phsu"
+token = "xoxb-16569788000-NoXWhsDU4WyPOnw1w6w8huOt"
 sc = SlackClient(token)
 if sc.rtm_connect():
     while True:
