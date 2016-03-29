@@ -5,13 +5,8 @@ from slackclient import SlackClient
 from subprocess import call
 import fileinput
 
-<<<<<<< HEAD
-
-#token = "xoxb-16569788000-v0QkD3YyVNA1NoLql6M4Phsu"
-=======
 #testKanal = "C0FJTRJM6"
 #signKanal = "C0GGN4D0T"
->>>>>>> a6edadebac8455c7fcbb14d80a53e2d527d79da6
 token = "xoxb-16569788000-NoXWhsDU4WyPOnw1w6w8huOt"
 sc = SlackClient(token)
 if sc.rtm_connect():
