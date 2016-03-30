@@ -55,6 +55,8 @@ def main(argv):
     text = text.replace(chr(195)+chr(133), chr(8)+chr(47))    #Å
     text = text.replace(chr(195)+chr(132), chr(8)+chr(46))    #Ä
     text = text.replace(chr(195)+chr(150), chr(8)+chr(57))    #Ö
+    
+    testText = "Test"
 
     # connect to sign
     sign = alphasign.Serial(port)
@@ -67,20 +69,23 @@ def main(argv):
     # create logical objects to work with
     counter_str = alphasign.String(size=14, label="1")
     counter_txt = alphasign.Text(text % color, label="A", mode=mode)
+    
+    test_str = alphasign.String(size=14, label="2")
+    test_txt = alphasign.Text(testText % color, label="B", mode=mode)
 
     # allocate memory for these objects on the sign
     if init:
         print "Allocating memoty"
-        sign.allocate((counter_str, counter_txt))
+        sign.allocate((counter_str, counter_txt, test_str, test_txt))
 
     # tell sign to only display the coutner text
     if init:
         print "Setting run sequence"
-        sign.set_run_sequence((counter_txt,))
+        sign.set_run_sequence((counter_txt, testText))
 
     # write objects
     print "Writing objects"
-    for obj in (counter_str, counter_txt):
+    for obj in (counter_str, counter_txt, test_str, test_txt):
         sign.write(obj)
 
 if __name__ == "__main__":
